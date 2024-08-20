@@ -6,6 +6,103 @@
     <title>이케아 반응형 메인페이지</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="lib/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+                var swiper = new Swiper(".main_swiper", {
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            loop: true,
+            autoplay: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            });
+            //main_visual
+
+            $('.section01 li').click(function(event){
+                event.preventDefault();
+                $('.section01 li').removeClass('on');
+                $(this).addClass('on');
+            });
+            var swiper = new Swiper(".section_img", {
+            slidesPerView: 2,
+            spaceBetween: 5,
+            breakpoints: {
+                640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+                },
+                768: {
+                slidesPerView: 3,
+                spaceBetween: 40,
+                },
+                960: {
+                slidesPerView: 3,
+                spaceBetween: 12,
+                },
+                1024: {
+                slidesPerView: 4,
+                spaceBetween: 12,
+                },
+            },
+            });
+            //section01
+
+            $('.color li').click(function(event){
+                event.preventDefault();
+                $('.color li').removeClass('on');
+                $(this).addClass('on');
+            });
+            var swiper = new Swiper(".right_item", {
+            slidesPerView: 2,
+            spaceBetween: 9,
+            breakpoints: {
+                640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+                },
+                768: {
+                slidesPerView: 2,
+                spaceBetween: 18,
+                },
+                960: {
+                slidesPerView: 2,
+                spaceBetween: 21,
+                },
+                1024: {
+                slidesPerView: 3,
+                spaceBetween: 21,
+                },
+            },
+            });
+            //color
+            
+            $('.idea li').click(function(event){
+                event.preventDefault();
+                $('.idea li').removeClass('on');
+                $(this).addClass('on');
+            });
+            //idea
+
+            let menuBtn = document.querySelector('.tab_btn01');
+            let tabNav = document.querySelector('.tab_nav');
+
+            menuBtn.addEventListener('click', () => {
+                tabNav.classList.toggle('on');
+            });
+
+            let mobBtn = document.querySelector('.mob_btn');
+            let mobNav = document.querySelector('.mob_nav');
+            
+            mobBtn.addEventListener('click', () => {
+                mobNav.classList.toggle('on');
+            });
+        });//script end
+    </script>
+
 </head>
 <body>
     <div class="wrap">
@@ -531,36 +628,42 @@
                             </figure>
                             <p>수납/정리</p>
                         </a>
+
                         <a href="#">
                             <figure>
                                 <img src="img/Group86.svg" alt="가구">
                             </figure>
                             <p>가구</p>
                         </a>
+
                         <a href="#">
                             <figure>
                                 <img src="img/Group87(1).svg" alt="아웃도어/야외용품">
                             </figure>
                             <p>아웃도어/야외용품</p>
                         </a>
+
                         <a href="#">
                             <figure>
                                 <img src="img/Group88.svg" alt="화분/식물">
                             </figure>
                             <p>화분/식물</p>
                         </a>
+
                         <a href="#">
                             <figure>
                                 <img src="img/Group89.svg" alt="홈데코/장식품">
                             </figure>
                             <p>홈데코/장식품</p>
                         </a>
+
                         <a href="#">
                             <figure>
                                 <img src="img/Group90.svg" alt="침대/매트리스">
                             </figure>
                             <p>침대/매트리스</p>
                         </a>
+                        
                         <a href="#">
                             <figure>
                                 <img src="img/Group91.svg" alt="어린이 IKEA">
@@ -576,34 +679,12 @@
                     <h2>이런 테마는 어때요?</h2>
                     <div class="btn">
                         <ul>
-                            <li>
-                                <input type="radio" name="btn" id="btn01" checked>
-                                <label for="btn01">신제품</label>
-                            </li>
-                            <li>
-                                <input type="radio" name="btn" id="btn02">
-                                <label for="btn02">더 낮은 새로운 가격</label>
-                            </li>
-                            <li>
-                                <input type="radio" name="btn" id="btn03">
-                                <label for="btn03">IKEA Family 특별가</label>
-                            </li>
-                            <li>
-                                <input type="radio" name="btn" id="btn04">
-                                <label for="btn04">베스트셀러</label>
-                            </li>
-                            <li>
-                                <input type="radio" name="btn" id="btn05">
-                                <label for="btn05">5천원 미만 추천 제품</label>
-                            </li>
-                            <li>
-                                <input type="radio" name="btn" id="btn06">
-                                <label for="btn06">지속가능한 소재 제품</label>
-                            </li>
-                            <li>
-                                <input type="radio" name="btn" id="btn07">
-                                <label for="btn07">한정판</label>
-                            </li>
+                            <li class="on"><a href="#">더 낮은 새로운 가격</a></li>
+                            <li><a href="#">IKEA Family 특별가</a></li>
+                            <li><a href="#">베스트셀러</a></li>
+                            <li><a href="#">5천원 미만 추천 제품</a></li>
+                            <li><a href="#">지속가능한 소재 제품</a></li>
+                            <li><a href="#">한정판</a></li>
                         </ul>
                         <div class="plus">
                             <a href="#"><span>더보기</span></a>
@@ -767,42 +848,15 @@
                     <h2>색상별 제품 보러가기</h2>
                     <div class="btn">
                         <ul>
-                            <li>
-                                <input type="radio" name="btn" id="btn08" checked>
-                                <label for="btn08">옐로</label>
-                            </li>
-                            <li>
-                                <input type="radio" name="btn" id="btn09">
-                                <label for="btn09">오렌지</label>
-                            </li>
-                            <li>
-                                <input type="radio" name="btn" id="btn10">
-                                <label for="btn10">그린</label>
-                            </li>
-                            <li>
-                                <input type="radio" name="btn" id="btn11">
-                                <label for="btn11">블루</label>
-                            </li>
-                            <li>
-                                <input type="radio" name="btn" id="btn12">
-                                <label for="btn12">핑크</label>
-                            </li>
-                            <li>
-                                <input type="radio" name="btn" id="btn13">
-                                <label for="btn13">레드</label>
-                            </li>
-                            <li>
-                                <input type="radio" name="btn" id="btn14">
-                                <label for="btn14">브라운</label>
-                            </li>
-                            <li>
-                                <input type="radio" name="btn" id="btn15">
-                                <label for="btn15">화이트</label>
-                            </li>
-                            <li>
-                                <input type="radio" name="btn" id="btn16">
-                                <label for="btn16">블랙</label>
-                            </li>
+                            <li class="on"><a href="#">옐로</a></li>
+                            <li><a href="#">오렌지</a></li>
+                            <li><a href="#">그린</a></li>
+                            <li><a href="#">블루</a></li>
+                            <li><a href="#">핑크</a></li>
+                            <li><a href="#">레드</a></li>
+                            <li><a href="#">브라운</a></li>
+                            <li><a href="#">화이트</a></li>
+                            <li><a href="#">블랙</a></li>
                         </ul>
                     </div><!-- btn end -->
                     <div class="mobile plus">
@@ -923,7 +977,7 @@
                     <h2>홈퍼니싱 아이디어</h2>
                     <div class="btn">
                         <ul>
-                            <li><a href="#">모든 공간</a></li>
+                            <li class="on"><a href="#">모든 공간</a></li>
                             <li><a href="#">침실</a></li>
                             <li><a href="#">거실</a></li>
                             <li><a href="#">주방</a></li>
@@ -1225,86 +1279,5 @@
             </div><!-- inner end -->
         </footer><!-- footer end -->
     </div><!-- wrap end -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <script>
-        var swiper = new Swiper(".main_swiper", {
-          slidesPerView: 'auto',
-          centeredSlides: true,
-          loop: true,
-          autoplay: true,
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-          },
-        });
-
-        var swiper = new Swiper(".section_img", {
-        slidesPerView: 2,
-        spaceBetween: 0,
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        breakpoints: {
-            640: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-            },
-            768: {
-            slidesPerView: 3,
-            spaceBetween: 40,
-            },
-            960: {
-            slidesPerView: 3,
-            spaceBetween: 12,
-            },
-            1024: {
-            slidesPerView: 4,
-            spaceBetween: 12,
-            },
-        },
-        });
-        var swiper = new Swiper(".right_item", {
-        slidesPerView: 2,
-        spaceBetween: 9,
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        breakpoints: {
-            640: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-            },
-            768: {
-            slidesPerView: 2,
-            spaceBetween: 18,
-            },
-            960: {
-            slidesPerView: 2,
-            spaceBetween: 21,
-            },
-            1024: {
-            slidesPerView: 3,
-            spaceBetween: 21,
-            },
-        },
-        });
-
-        let menuBtn = document.querySelector('.tab_btn01');
-        let tabNav = document.querySelector('.tab_nav');
-
-        menuBtn.addEventListener('click', () => {
-            tabNav.classList.toggle('on');
-        });
-
-        let mobBtn = document.querySelector('.mob_btn');
-        let mobNav = document.querySelector('.mob_nav');
-        
-        mobBtn.addEventListener('click', () => {
-            mobNav.classList.toggle('on');
-        });
-    </script>
 </body>
 </html>
