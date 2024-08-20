@@ -428,16 +428,13 @@ html{
     display: flex;
     gap: 1.5rem;
 }
-ul li input {
-    display: none;
-}
-.section01 .inner .btn ul li label{
+.section01 .inner .btn ul li{
     font-size: 1.4rem;
     background-color: #EFEFEF;
     padding: 1rem 2rem;
     border-radius: 20px;
 }
-ul li input:checked + label{
+.section01 .inner .btn ul li.on{
     background-color: var(--color-ikea);
     color: #fff;
 }
@@ -493,7 +490,6 @@ ul li input:checked + label{
 .event .inner{
     max-width: 1280px;
     width: calc(100% - 60px);
-    height: 700px;
     margin: 0 auto;
 }
 .event .inner h2{
@@ -528,6 +524,7 @@ ul li input:checked + label{
     background-color: #F5F5F5;
     padding: 25px 20px;
     height: 212px;
+    position: relative;
 }
 .event .inner .list .item .text h5{
     font-size: 2rem;
@@ -535,8 +532,8 @@ ul li input:checked + label{
 }
 .event .inner .list .item .text p{
     line-height: 1.4;
-    margin-bottom: 2.5rem;
-    height: 68px;
+/*     margin-bottom: 2.5rem; */
+/*     height: 68px; */
 }
 .event .inner .list .item .text a{
     max-height: 416px;
@@ -546,6 +543,9 @@ ul li input:checked + label{
     display: flex;
     align-items: center;
     gap: 1rem;
+    position: absolute;
+    bottom: 50px;
+    left: 25px;
 }
 .event .inner .list .item .text .icon a img{
     display: block;
@@ -559,9 +559,9 @@ ul li input:checked + label{
     background-color: #000;
     color: #fff;
 }
-.event .inner .list .item:nth-child(1) .text p{
+/* .event .inner .list .item:nth-child(1) .text p{
     margin-bottom: 2.5rem;
-}
+} */
 
 .color .inner{
     max-width: 1280px;
@@ -581,18 +581,14 @@ ul li input:checked + label{
     gap: 1.5rem;
     margin-bottom: 3rem;
 }
-.color .inner .btn ul li label{
+.color .inner .btn ul li{
     font-size: 1.4rem;
     background-color: #EFEFEF;
     padding: 1rem 2rem;
     border-radius: 20px;
 }
-ul li input:checked + label{
+.color .inner .btn ul li.on{
     background-color: var(--color-ikea) !important;
-    color: #fff;
-}
-.color .inner .btn ul li:hover{
-    background-color: var(--color-ikea);
     color: #fff;
 }
 .color .inner .item_flex{
@@ -735,7 +731,7 @@ ul li input:checked + label{
     padding: 1rem 2rem;
     border-radius: 20px;
 }
-.idea .inner .btn ul li:hover{
+.idea .inner .btn ul li.on{
     background-color: var(--color-ikea);
     color: #fff;
 }
@@ -1224,9 +1220,9 @@ ul li input:checked + label{
     .event .inner .plus span{
         font-size: 16px;
     }
-    .event .inner .list .item:nth-child(1) .text p{
+/*     .event .inner .list .item:nth-child(1) .text p{
         margin-bottom: 20px;
-    }
+    } */
     .event .inner .list .item img{
         height: 30vw;
     }
@@ -1305,6 +1301,9 @@ ul li input:checked + label{
     }
     .event .inner .list .item .text h5{
         height: 32px;
+    }
+    .event .inner .list .item .text .icon{
+        bottom: 30px;
     }
     .coll .inner .item .text{
         padding-top: 50px;
@@ -1507,6 +1506,9 @@ ul li input:checked + label{
     
     .section01 .inner .btn ul li:nth-child(3) ~ li{
         display: none;
+    }
+    .event .inner .list .item .text .icon{
+        bottom: 20px;
     }
     .color .inner .plus{
         display: none;
@@ -1806,9 +1808,9 @@ ul li input:checked + label{
     .event .inner .list .item .text p{
         font-size: 12px;
     }
-    .event .inner .list .item:nth-child(1) .text p{
+/*     .event .inner .list .item:nth-child(1) .text p{
         margin-bottom: 20px;
-    }
+    } */
 
     .color .inner{
         width: calc(100% - 30px);
@@ -1817,14 +1819,14 @@ ul li input:checked + label{
         justify-content: center;
         margin-bottom: 25px;
     }
-    .color .inner .btn ul li label{
+    .color .inner .btn ul li{
         font-size: 12px;
         padding: 10px 15px;
     }
     .color .inner .btn ul li:nth-child(5) ~ li{
         display: block;
     }
-    .color .inner .btn ul li:nth-child(7) ~ li{
+    .color .inner .btn ul li:nth-child(6) ~ li{
         display: none;
     }
     .color .inner .item_flex{
@@ -2190,9 +2192,9 @@ ul li input:checked + label{
     .event .inner .list .item .text p{
         font-size: 12px;
     }
-    .event .inner .list .item:nth-child(1) .text p{
+    /* .event .inner .list .item:nth-child(1) .text p{
         margin-bottom: 20px;
-    }
+    } */
     .event .inner .list .item img{
         height: 40vw;
     }
@@ -2203,7 +2205,7 @@ ul li input:checked + label{
     .color .inner .btn ul{
         justify-content: center;
     }
-    .color .inner .btn ul li label{
+    .color .inner .btn ul li{
         font-size: 12px;
         padding: 10px 15px;
     }
@@ -2474,6 +2476,9 @@ ul li input:checked + label{
 }/* 390 */
 
 @media screen and (max-width:350px){
+    .section01 .inner .btn ul li{
+        font-size: 11px;
+    }
     .event .inner .list .item:nth-child(1) .text p{
         margin-bottom: 15px;
     }
