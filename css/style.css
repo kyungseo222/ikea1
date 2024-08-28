@@ -2113,10 +2113,9 @@ html{
     .section01 .inner .btn ul{
         justify-content: center;
     }
-    .section01 .inner .btn ul li label{
+    .section01 .inner .btn ul li{
         font-size: 12px;
-        margin-bottom: 18px;
-        padding: 10px 15px;
+        padding: 10px;
     }
     .section01 .inner .btn ul li:nth-child(3) ~ li{
         display: none;
@@ -2206,7 +2205,7 @@ html{
         justify-content: center;
     }
     .color .inner .btn ul li{
-        font-size: 12px;
+        font-size: 11px;
         padding: 10px 15px;
     }
     .color .inner .btn ul li:nth-child(5) ~ li{
@@ -2319,7 +2318,7 @@ html{
         justify-content: center;
     }
     .idea .inner .btn ul li{
-        font-size: 12px;
+        font-size: 11px;
         margin-bottom: 18px;
         padding: 10px 15px;
     }
